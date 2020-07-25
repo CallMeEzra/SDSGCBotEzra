@@ -20,7 +20,15 @@ client.on("ready", () => {
   console.log(`Bot has started, with ${client.users.size} users, in ${client.channels.size} channels of ${client.guilds.size} guilds.`); 
   // Example of changing the bot's playing game to something useful. `client.user` is what the
   // docs refer to as the "ClientUser".
-  client.user.setActivity(`Serving ${client.guilds.size} servers now`);
+  //client.user.setActivity("Max beim Duschen zu", { type: "WATCHING"});
+  
+  client.user.setPresence({
+        game: { 
+            name: 'Schaut Max beim Duschen zsssu',
+            type: 'Watching'
+        },
+        status: 'idle'
+    })
 });
 
 client.on("guildCreate", guild => {
@@ -120,6 +128,34 @@ client.on("message", async message => {
   message.channel.send({embed});
   }
   
+  if(command === "bluedemonmeliodas") {
+   const embed = new Discord.RichEmbed()
+  .setTitle("Blue Demon Meliodas")
+  .setURL("https://www.sdsgc.gg/characters/87/meliodas")
+  .setAuthor(" SDSGC Bot by Ezra", "https://cdn.discordapp.com/avatars/196594030866464778/01944e43d1bf28156799332e246bad84.png?size=256")
+  /*
+   * Alternatively, use "#00AE86", [0, 174, 134] or an integer number.
+   */
+   
+  .setColor(0x00AE86)
+  .setDescription("Korrosion, AOE, Durchdringen, Schwachpunkt")
+  .setFooter("SDSGC Bot by Ezra V 0.1", "https://cdn.discordapp.com/avatars/196594030866464778/01944e43d1bf28156799332e246bad84.png?size=256")
+  //.setImage("https://cdn.7ds.guide/wp-content/uploads/2020/03/red-demon.jpg")
+  .setThumbnail("https://rerollcdn.com/SDSGC/portraits/portrait_87.png")
+
+   // Takes a Date object, defaults to current date.
+
+  .setTimestamp()
+  .addField("This is a field title, it can hold 256 characters",
+    "This is a field value, it can hold 1024 characters.")
+	
+  .addField("Basis Werte", "Angriff \nVerteidigung \nLeben", true)
+  .addBlankField(true)
+  .addField("Werte", "550 \n320 \n6400", true);
+ 
+  message.channel.send({embed});
+  }
+ 
   if(command === "ping") {
     // Calculates ping between sending a message and editing it, giving a nice round-trip latency.
     // The second ping is an average latency between the bot and the websocket server (one-way, not round-trip)
