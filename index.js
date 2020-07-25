@@ -27,7 +27,7 @@ client.on("ready", () => {
             name: 'Schaut Max beim Duschen zu',
             type: 'Watching'
         },
-        status: 'idle'
+        status: 'online'
     })
 });
 
