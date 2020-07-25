@@ -24,7 +24,7 @@ client.on("ready", () => {
   
   client.user.setPresence({
         game: { 
-            name: 'Schaut Max beim Duschen zsssu',
+            name: 'Schaut Max beim Duschen zu',
             type: 'Watching'
         },
         status: 'idle'
